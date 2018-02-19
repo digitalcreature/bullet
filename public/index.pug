@@ -1,0 +1,15 @@
+extends ../template/layout.pug
+block head
+  title bullet
+  link(rel="stylesheet" href="/style/index.css")
+block body
+  .journal
+    .week
+      .days
+        each day in [0, 1, 2, 3, 4, 5, 6]
+          .day(day=day)
+            h1.title
+            .items.fw
+            form#newitem.fw(action="#")
+              input#title(type="text" name="item name")
+              input#submit(type="submit" value="+")
